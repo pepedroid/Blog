@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLikesUsersPosts extends Migration
+class CreateLikesPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLikesUsersPosts extends Migration
      */
     public function up()
     {
-        Schema::create('likes_users_posts', function (Blueprint $table) {
+        Schema::create('likes_posts', function (Blueprint $table) {
             //$table->id();
             // Commo esta tabla lleva una lalve compuesta, SU LALVE PRIMARIA SE COMPONE POR EL ID DEL POST Y DEL USUARIO
             $table->foreignId("post_id")->constrained()->onUpdated()->onDeleted();
@@ -30,6 +30,6 @@ class CreateLikesUsersPosts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('likes_users_posts');
+        Schema::dropIfExists('likes_posts');
     }
 }
