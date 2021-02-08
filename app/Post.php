@@ -14,7 +14,7 @@ class Post extends Model
 
     // Relations one to one
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }// user 1 . 1
 
     /**

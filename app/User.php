@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -39,6 +40,6 @@ class User extends Authenticatable
 
 
     public function profile(){
-        return $this->belongsTo(Profile::class);
+        return $this->belongsTo(Profile::class,"user_id");
     }
 }

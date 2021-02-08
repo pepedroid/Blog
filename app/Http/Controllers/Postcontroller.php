@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//Use Resources to convert into json
+use App\Http\Resources\PostResource as PostResource;
+
+// imports models
+use App\Post;
 
 class Postcontroller extends Controller
 {
@@ -13,7 +18,7 @@ class Postcontroller extends Controller
      */
     public function index()
     {
-        //
+        return Post::all();
     }
 
     /**
@@ -80,5 +85,12 @@ class Postcontroller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // method Example
+    public function getPosts()
+    {
+        $users = Post::all();
+        return Post::collection($users);
     }
 }
