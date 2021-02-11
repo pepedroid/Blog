@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="{{url('/')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">Acerca de</a>
+                    <a class="nav-link" href="{{url('/about')}}">Acerca de</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="post.html">Lo que te pierdes</a>

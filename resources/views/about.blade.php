@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    @extends('public.content')
+    @extends('public.about')
 @endsection
 
 
@@ -24,11 +24,10 @@
 
 
 @section('header')
-    @extends('public.header')
+    @extends('public.header',["title"=>$title,"description"=>$description,"text"=>$text])
 @endsection
 
-
-@section('title',"Blog")
+@section('title','Acerca de')
 
 
 
