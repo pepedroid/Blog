@@ -18,7 +18,7 @@
                     <a class="nav-link" href="post.html">Lo que te pierdes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Entrar</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                 </li>
             </ul>
         </div>

@@ -1,35 +1,30 @@
 @extends('layouts.appPublic')
+@section('title',"Blog")
 
-@section('js')
-    @extends('public.js')
+@section('head')
+    @include('public.head')
+@endsection
+
+@section('navigation')
+    @include('public.nav')
+@endsection
+
+@section('header')
+    @include('public.header')
+@endsection
+
+
+@section('content')
+    @include('public.content')
 @endsection
 
 @section('footer')
-    @extends('public.footer')
+    @include('public.footer')
 @endsection
 
-@section('content')
-    @extends('public.content')
+@section('js')
+    @include('public.js')
 @endsection
-
-
-@section('navigation')
-    @extends('public.nav')
-@endsection
-
-@section('head')
-    @extends('public.head')
-@endsection
-
-
-
-@section('header')
-    @extends('public.header')
-@endsection
-
-
-@section('title',"Blog")
-
 
 
 

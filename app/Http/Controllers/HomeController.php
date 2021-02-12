@@ -17,7 +17,7 @@ class HomeController extends Controller
         /**
          * Esto lo validamos despues :V me redirecciona al login :v
          */
-        // $this->middleware('auth');
+   //      $this->middleware('auth');
     }
 
     /**
@@ -29,7 +29,8 @@ class HomeController extends Controller
     {
         $data = [
             "title" => "BLOG",
-            "description" => "Un espacio para expresar tus ideas"];
+            "description" => "Un espacio para expresar tus ideas",
+            "img" => "img/home-bg.jpg"];
         return View::make('main', $data);
     }
 
@@ -42,10 +43,17 @@ class HomeController extends Controller
     {
         $title = "¿Quién soy yo?";
         $description = "!Vamos, Conoce un poco de mí";
-        $text = "Mi nombre es Guadalupe Valerio y soy ingeniero en Tecnologías de la Información y Comunicación (¿Qué nombre tan largo, no?
+        $text = "Mi nombre es Guadalupe Valerio y soy ingeniero en Tecnologías de la Información y Comunicación (¿Qué nombre tan largo, no?)
                 Este portal surgió de la necesidad de aprender Laravel e implementar otras tenologás actuales.
                 Te invito a crear una cuenta para que conoczcas todo lo que puedes hacer en esta paltaforma.
                 Mucho éxito. lml ";
-        return view('about')->with('title', $title)->with("description", $description)->with("text",$text);
+        $img = "img/about-bg.jpg";
+        return view('about')->with('title', $title)->with("description", $description)->with("text",$text)->with("img",$img);
     }
+
+    public function login(){
+        return "vista de login";
+    }
+
+
 }

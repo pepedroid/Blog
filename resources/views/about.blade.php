@@ -1,36 +1,30 @@
 @extends('layouts.appPublic')
+@section('title','Acerca de')
 
-@section('js')
-    @extends('public.js')
+@section('head')
+    @include('public.head')
+@endsection
+
+@section('navigation')
+    @include('public.nav')
+@endsection
+
+@section('header')
+    @include('public.header',["title"=>$title,"description"=>$description,"text"=>$text])
+@endsection
+
+
+@section('content')
+    @include('public.about')
 @endsection
 
 @section('footer')
-    @extends('public.footer')
+    @include('public.footer')
 @endsection
 
-@section('content')
-    @extends('public.about')
+@section('js')
+    @include('public.js')
 @endsection
-
-
-@section('navigation')
-    @extends('public.nav')
-@endsection
-
-@section('head')
-    @extends('public.head')
-@endsection
-
-
-
-@section('header')
-    @extends('public.header',["title"=>$title,"description"=>$description,"text"=>$text])
-@endsection
-
-@section('title','Acerca de')
-
-
-
 
 
 
