@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -63,11 +60,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('REGISTRO') }}</a>
                         </li>
-                        @if (Route::has('register'))
+                        <!--@if (Route::has('register')) -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                             </li>
-                        @endif
+                        <!-- @endif -->
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -116,5 +113,9 @@
     <hr>
     @yield('footer')
 </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>
