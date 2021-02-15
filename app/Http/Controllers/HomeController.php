@@ -52,7 +52,10 @@ class HomeController extends Controller
     }
 
     public function login(){
-        return "vista de login";
+        $img = "img/home-bg.jpg";
+        $title = "Acceso de usuarios";
+        $description = "Ingresa tu correo para poder acceder a la plataforma";
+        return view('auth.login')->with('img',$img)->with('title',$title)->with('description',$description);
     }
 
 
