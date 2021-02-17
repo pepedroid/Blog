@@ -22,4 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Example method by API
 
-Route::resource("post",'PostController');
+//Route::resource("post",'PostController');
+
+
+Route::apiResource('post', 'PostController');
