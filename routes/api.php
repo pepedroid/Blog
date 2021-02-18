@@ -20,9 +20,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-// Example method by API
-
-//Route::resource("post",'PostController');
-
-
 Route::apiResource('post', 'PostController');
+
+// Users Auth
+/** 
+ * Define 4 rutas, asignando a todas un prefijo "auth". 
+ * Las 2 primeras rutas son públicas, y las 2 siguientes requieren de autenticación.
+ */
+Route::group([
+    'prefix' => 'auth'],
+    function () {
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signUp');
+
+    Route::group([
+        'middleware' => 'auth:api'],
+        function () {
+        Route::get('logout', 'AuthController@logout');
+        Route::get('user', 'AuthController@user');
+    });
+});
