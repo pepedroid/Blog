@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +20,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('posts', function() {
-    // If the Content-Type and Accept headers are set to 'application/json', 
-    // this will return a JSON structure. This will be cleaned up later.
-    return Post::all();
+Route::apiResource('post', 'PostController');
+
+// Users Auth
+/** 
+ * Define 4 rutas, asignando a todas un prefijo "auth". 
+ * Las 2 primeras rutas son públicas, y las 2 siguientes requieren de autenticación.
+ */
+Route::group([
+    'prefix' => 'auth'],
+    function () {
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signUp');
+
+    Route::group([
+        'middleware' => 'auth:api'],
+        function () {
+        Route::get('logout', 'AuthController@logout');
+        Route::get('user', 'AuthController@user');
+    });
 });
-Route::post('auth','LoginController@auth');

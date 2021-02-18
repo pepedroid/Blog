@@ -10,11 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     // campos de la tabla que pueden ser alterados
-    protected $fillable = ["title","subTitle","description","img"];
+    protected $fillable = ["title","subTitle","description","img","user_id"];
 
     // Relations one to one
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }// user 1 . 1
 
     /**
