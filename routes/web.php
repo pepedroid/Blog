@@ -12,27 +12,4 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
-Route::get('/{any}', function () {
-    return view(' main');
-})->where('any','.*');
 
-/* Route::get('/{any}', 'SpaController@index')->where('any', '.*');
- */
-/*  
-
-Route::get('/{catchall?}', function () {
-    return response()->view('index');
-})->where('catchall', '(.*)');
-
-
-
-// Auth::routes();
-
-Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('/about', 'HomeController@about')->name('about');
-
-Route::get('/login','HomeController@login')->name('login');
-
-*/
