@@ -18,7 +18,7 @@ class AuthController extends Controller
      */
     public function signUp(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+/*        $validator = Validator::make($request->all(), [
             'nickName' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string',
@@ -33,7 +33,16 @@ class AuthController extends Controller
                 'message' => "Error en validaciones",
                 "body" => $validator->errors()
             ], 400);
-        } // if
+        } // if*/
+
+        $request->validate([
+            'nickName' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string',
+            'firstName' => 'required|string',
+            'secondName' => 'required|string',
+            'genre' => 'required',
+        ]);
 
         // Creamos un usuario
         $user = new User();
@@ -76,7 +85,7 @@ class AuthController extends Controller
 
          // Validamos al usuario a aautenticarse
         if(!Auth::attempt($credentials)) return response()->json(["message" => "Bad Credentials"],401);
-        
+
         $user = $request->user();
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
@@ -88,7 +97,7 @@ class AuthController extends Controller
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($token->expires_at)->toDateTimeString()
-        ]); 
+        ]);
     } //login
 
     public function logout(Request $request)
@@ -111,4 +120,4 @@ class AuthController extends Controller
             return response()->json(["message" => "failed", "body" => "Whoops! no user found"],400);
         }
     }
-}// class  
+}// class
