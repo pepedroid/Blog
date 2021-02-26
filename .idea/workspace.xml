@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d52d399b-b3e8-4eab-bc7d-dbb8128f7a21" name="Default Changelist" comment="se crean vistas y programación para registro de usuarios">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/LoginComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/RegistroComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/content/AboutComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/content/HeaderComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/content/NavComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d52d399b-b3e8-4eab-bc7d-dbb8128f7a21" name="Default Changelist" comment="se crean vistas y programación para registro de usuarios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -319,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614364746124</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="se eliminan archivos que no tienen que ver con el API">
+      <created>1614366713824</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614366713824</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +344,8 @@
     <MESSAGE value="se crean métodos para registro de usuarios" />
     <MESSAGE value="se crean vistas y programación para registro de usuarios" />
     <MESSAGE value="descarga de la rama register" />
-    <option name="LAST_COMMIT_MESSAGE" value="descarga de la rama register" />
+    <MESSAGE value="se eliminan archivos que no tienen que ver con el API" />
+    <option name="LAST_COMMIT_MESSAGE" value="se eliminan archivos que no tienen que ver con el API" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
