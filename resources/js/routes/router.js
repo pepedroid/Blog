@@ -4,8 +4,8 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 // Imports components
-import ExampleComponent from '../components/ExampleComponent.vue'; 
-import LoginComponent from '../components/LoginComponent.vue'; 
+import ExampleComponent from '../components/ExampleComponent.vue';
+import LoginComponent from '../components/LoginComponent.vue';
 import AboutComponent from '../components/content/AboutComponent';
 import RegistroComponent from '../components/RegistroComponent';
 

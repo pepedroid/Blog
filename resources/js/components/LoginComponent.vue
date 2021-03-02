@@ -8,7 +8,7 @@
           <div class="card-header">Acceso</div>
 
           <div class="card-body">
-            <form method="POST" @submit="sayHi">
+            <form method="POST" @submit="login">
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right"
                   >Correo Electrónico</label
@@ -24,6 +24,7 @@
                     required
                     autocomplete="email"
                     autofocus
+                    v-model="form.email"
                   />
                   <!-- {{ old('email') }} -->
                   <!-- <span class="invalid-feedback" role="alert">
@@ -47,6 +48,7 @@
                     name="password"
                     required
                     autocomplete="current-password"
+                    v-model="form.password"
                   />
 
                   <!--@error('password')
@@ -101,6 +103,10 @@
 </template>
 
 <script>
+
+import axios from    'axios';
+axios.defaults.withCredentials = true;
+
 export default {
   mounted() {
     this.$store.commit("setTitle", "Acceso de usuarios");
@@ -109,7 +115,8 @@ export default {
       "Ingresa tu correo y contraseña para poder acceder a la plataforma"
     );
     this.$store.commit("setImg", "img/home-bg.jpg");
-    axios.get("/api/posts").then((response) =>
+
+    axios.get("/api/post").then((response) =>
       //this.info = response
       console.log(response.data)
     );
@@ -119,16 +126,18 @@ export default {
    */
   data: function () {
     return {
-      email: "",
-      pwd: "",
+        form:{
+            email: "",
+            password: ""
+        }
     };
   }, // data
   methods: {
-    sayHi: function (e) {
+    async login(e) {
       e.preventDefault();
-      alert("hay hi");
+      await this.$store.dispatch('login',this.form);
+      // redirect
     },
   }, // methods
 };
 </script>
- 

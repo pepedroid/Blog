@@ -20,11 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('post', 'PostController');
+Route::apiResource('post', 'PostController')->middleware('auth:sanctum');
 
 // Users Auth
-/** 
- * Define 4 rutas, asignando a todas un prefijo "auth". 
+/**
+ * Define 4 rutas, asignando a todas un prefijo "auth".
  * Las 2 primeras rutas son públicas, y las 2 siguientes requieren de autenticación.
  */
 Route::group([
@@ -34,7 +34,7 @@ Route::group([
     Route::post('signup', 'AuthController@signUp');
 
     Route::group([
-        'middleware' => 'auth:api'],
+        'middleware' => 'auth:sanctum'],
         function () {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');

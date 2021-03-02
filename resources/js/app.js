@@ -10,7 +10,7 @@ window.Vue = require('vue');
 
 // importamos js routing vue
 import router from './routes/router.js';
-import store from './store.js';
+import store from './store/store.js';
 
 /**
  * The following block of code may be used to automatically register your
@@ -47,7 +47,7 @@ Vue.mixin({
       }
     }
   })
-  
+
 
 const app = new Vue({
     data:{
