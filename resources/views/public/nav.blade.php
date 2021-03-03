@@ -9,16 +9,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}">Inicio</a>
+                    <a v-bind:href='/' class="nav-link">Inicio</a>
+                    <router-link :to="{ name: 'home' }">Home</router-link>
+                    
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/about')}}">Acerca de</a>
+                    <a class="nav-link" href="#">Acerca de</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="post.html">Lo que te pierdes</a>
+                    <a class="nav-link" href="#">Lo que te pierdes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                    <a class="nav-link" href="#">Entrar</a>
                 </li>
             </ul>
         </div>
