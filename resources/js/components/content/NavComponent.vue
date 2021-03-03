@@ -25,12 +25,13 @@
                         <router-link :to="{ name: 'about' }">Acerca de</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Lo que te pierdes</a>
+                        <router-link  :to="{name: 'posts'}">Lo que te Pierdes</router-link>
                     </li>
                     <template v-if="$store.state.auth">
 
                         <li class="nav-item">
-                            <router-link :to="{ name: 'acceso' }">SALIR</router-link>
+                            <a class="nav-link" href="#" @click="logOut">SALIR</a>
+<!--                            <router-link :to="{ name: 'acceso' }">SALIR</router-link>-->
                         </li>
 
                     </template>
@@ -49,6 +50,12 @@
 export default {
     mounted() {
         console.log("Component mounted.");
-    },
+    },// mounted
+    methods : {
+        logOut(){
+            // Matamos la sesión
+            this.$store.dispatch('logOut');
+        }// logOut
+    }// methods
 };
 </script>

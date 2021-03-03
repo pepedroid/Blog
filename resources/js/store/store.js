@@ -9,7 +9,7 @@ export default new Vuex.Store({
         text : "",
         img : "",
         user : null,
-        auth : false
+        auth :  localStorage.getItem('blog_token') || ''
     }, // state
     mutations : {
         setTitle(state,title){
@@ -43,6 +43,17 @@ export default new Vuex.Store({
             return dispatch('getUser')
 
         },// login
+        async logOut({commit}){
+            axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("blog_token")
+            axios.get('/api/auth/logout').then(res => {
+                if (res.data.message == "session die") {
+                    commit('SET_USER', null);
+                    localStorage.removeItem('blog_token')
+                    delete axios.defaults.headers.common['Authorization']
+                }// if
+            });
+
+        }, // logOut
         getUser({commit}) {
             axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("blog_token")
             axios.get('/api/auth/user').then(res => {

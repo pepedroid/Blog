@@ -29,7 +29,7 @@ Vue.component('header-component',require('./components/content/HeaderComponent.v
 
 Vue.component('about-component',require('./components/content/AboutComponent.vue').default);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/content/ExampleComponent.vue').default);
 Vue.component('login-form-component', require('./components/LoginComponent.vue').default);
 Vue.component('registro-form-component', require('./components/RegistroComponent.vue').default);
 
