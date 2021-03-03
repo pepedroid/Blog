@@ -12,6 +12,8 @@ window.Vue = require('vue');
 import router from './routes/router.js';
 import store from './store/store.js';
 
+import moment from './moment/moment.js'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -49,6 +51,9 @@ Vue.mixin({
   })
 
 
+
+
+
 const app = new Vue({
     data:{
         title:''
@@ -56,6 +61,7 @@ const app = new Vue({
     el: '#app',
     router,
     store,
+    moment,
     watch: {
         '$route' (to, from) {
           document.title = to.meta.title || 'Blog'
