@@ -110,6 +110,7 @@ axios.defaults.withCredentials = true;
 export default {
   mounted() {
     this.$store.commit("setTitle", "Acceso de usuarios");
+
     this.$store.commit(
       "setDescription",
       "Ingresa tu correo y contraseña para poder acceder a la plataforma"

@@ -4,10 +4,11 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 // Imports components
-import ExampleComponent from '../components/ExampleComponent.vue';
+import ExampleComponent from '../components/content/ExampleComponent.vue';
 import LoginComponent from '../components/LoginComponent.vue';
 import AboutComponent from '../components/content/AboutComponent';
 import RegistroComponent from '../components/RegistroComponent';
+import PostsExampleComponent from "../components/content/PostsExampleComponent";
 
 
 const router = new VueRouter({
@@ -17,7 +18,7 @@ const router = new VueRouter({
             component : ExampleComponent,
             name : 'home',
             meta:{
-                auth : false,
+           //     requiresAuth : true,
                 title : 'Blog'
             }
         },// home
@@ -30,6 +31,15 @@ const router = new VueRouter({
                 title : 'Acerca de'
             }
         },// acercaDe
+        {
+            path: '/posts',
+            component : PostsExampleComponent,
+            name : 'posts',
+            meta:{
+                auth : false,
+                title : 'Posts Públicos'
+            }
+        },// loQueTePierdes
         {
             path: '/acceso',
             component : LoginComponent,
@@ -51,5 +61,37 @@ const router = new VueRouter({
         }// registro
     ]// routes
 });
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+        if (localStorage.getItem('blog_token') == null) {
+            next({
+                path: '/acceso',
+                params: { nextUrl: to.fullPath }
+            })
+        } else {
+            let user = JSON.parse(localStorage.getItem('user'))
+            if(to.matched.some(record => record.meta.is_admin)) {
+                if(user.is_admin == 1){
+                    next()
+                }
+                else{
+                    next({ name: 'userboard'})
+                }
+            }else {
+                next()
+            }
+        }
+    } else if(to.matched.some(record => record.meta.guest)) {
+        if(localStorage.getItem('blog_token') == null){
+            next()
+        }
+        else{
+            next({ name: 'userboard'})
+        }
+    }else {
+        next()
+    }
+})
 
 export default router;
