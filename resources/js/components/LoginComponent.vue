@@ -109,6 +109,10 @@ axios.defaults.withCredentials = true;
 
 export default {
   mounted() {
+      // Validamos si ya existe una sesión activa, redireccionamos al inicio
+      if (this.$store.getters.getUser){
+          this.$router.push({name:'home'});
+      }
     this.$store.commit("setTitle", "Acceso de usuarios");
 
     this.$store.commit(
@@ -116,11 +120,6 @@ export default {
       "Ingresa tu correo y contraseña para poder acceder a la plataforma"
     );
     this.$store.commit("setImg", "img/home-bg.jpg");
-
-    axios.get("/api/post").then((response) =>
-      //this.info = response
-      console.log(response.data)
-    );
   }, // mounted
   /**
    * Datos que contendrá el componente de Login

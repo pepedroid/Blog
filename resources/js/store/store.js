@@ -8,8 +8,8 @@ export default new Vuex.Store({
         description : "",
         text : "",
         img : "",
-        user : null,
-        auth :  localStorage.getItem('blog_token') || ''
+        user : JSON.parse(localStorage.getItem('user')) || null,
+        auth :  localStorage.getItem('blog_token') || false
     }, // state
     mutations : {
         setTitle(state,title){
@@ -26,6 +26,9 @@ export default new Vuex.Store({
         },
         SET_USER(state,user){
             state.user  = user
+            const parsed = JSON.stringify(user);
+            localStorage.setItem(
+                'user', parsed);
             state.auth = Boolean(user);
         }// SET_USER
     },// mutations
@@ -33,12 +36,11 @@ export default new Vuex.Store({
         async login({dispatch}, credentials){
             await axios.get("/sanctum/csrf-cookie");
             await axios.post("/api/auth/login", credentials).then(res =>{
-               // this.user = res.data;
-                console.log(res.data.access_token)
                 localStorage.setItem(
                     'blog_token',
                     res.data.access_token
-                )
+                );
+                window.location.href = 'home';
             });
             return dispatch('getUser')
 
@@ -49,6 +51,7 @@ export default new Vuex.Store({
                 if (res.data.message == "session die") {
                     commit('SET_USER', null);
                     localStorage.removeItem('blog_token')
+                    localStorage.removeItem('user')
                     delete axios.defaults.headers.common['Authorization']
                 }// if
             });
@@ -57,7 +60,8 @@ export default new Vuex.Store({
         getUser({commit}) {
             axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("blog_token")
             axios.get('/api/auth/user').then(res => {
-                commit('SET_USER', res.data);
+                commit('SET_USER', res.data.body);
+                console.log(res.data)
             })
                 .catch(() => {
                     commit('SET_USER',null);
@@ -77,6 +81,9 @@ export default new Vuex.Store({
         },
         getImg(state){
             return state.img
+        },
+        getUser(state){
+            return state.user;
         }
 
 

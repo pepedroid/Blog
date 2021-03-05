@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d52d399b-b3e8-4eab-bc7d-dbb8128f7a21" name="Default Changelist" comment="se agrega columna de publico a al tabla de posts">
-      <change afterPath="$PROJECT_DIR$/resources/js/moment/moment.js" afterDir="false" />
+    <list default="true" id="d52d399b-b3e8-4eab-bc7d-dbb8128f7a21" name="Default Changelist" comment="se agregan los post a la vista pública">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/content/PostsExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/content/PostsExampleComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LoginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/content/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/content/ExampleComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/content/NavComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/content/NavComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614804628730</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="se isntala moment para formatos de fecha">
+      <created>1614808199784</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614808199784</updated>
+    </task>
+    <task id="LOCAL-00016" summary="se agregan los post a la vista pública">
+      <created>1614808540509</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614808540509</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,17 +371,9 @@
     <MESSAGE value="se crean vistas y programación para registro de usuarios" />
     <MESSAGE value="se crea login por usuario. falta guardar session en vue" />
     <MESSAGE value="se agrega columna de publico a al tabla de posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega columna de publico a al tabla de posts" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/content/NavComponent.vue</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="se isntala moment para formatos de fecha" />
+    <MESSAGE value="se agregan los post a la vista pública" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agregan los post a la vista pública" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
